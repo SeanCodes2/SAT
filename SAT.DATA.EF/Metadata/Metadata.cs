@@ -6,10 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SAT.DATA.EF.Metadata
+namespace SAT.DATA.EF.Models
 {
-    internal class Metadata
-    {
+    //internal class Metadata
+    //{}
         
         public class CourseMetadata
         {
@@ -179,5 +179,5 @@ namespace SAT.DATA.EF.Metadata
             [Display(Name = "Student Status Description")]
             public string? Ssdescription { get; set; }
         }
-    }
+    
 }
