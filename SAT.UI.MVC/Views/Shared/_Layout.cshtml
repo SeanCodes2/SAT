@@ -54,17 +54,18 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="team.html">Team</a></li>
+                    <li><a href="@Url.ActionLink("Index", "Home")" class="active">Home</a></li>
+                    <li><a href="@Url.ActionLink("About", "Home")">About</a></li>
+                    <li><a href="@Url.ActionLink("Index", "Courses")">Courses</a></li> @*Courses*@
+                    <li><a href="@Url.ActionLink("Index", "Students")">Students</a></li>
+                    @*<li><a href="@Url.ActionLink("Index", "Home")">Portfolio</a></li>
+                    <li><a href="@Url.ActionLink(" Index", "Home" )">Team</a></li>*@
                     <li><a href="blog.html">Blog</a></li>
                     <li class="dropdown">
                         <a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
-                            <li><a href="#">Dropdown 1</a></li>
-                            <li class="dropdown">
+                            <li><a href="#">Teachers</a></li>
+                            @*<li class="dropdown">
                                 <a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                                 <ul>
                                     <li><a href="#">Deep Dropdown 1</a></li>
@@ -73,13 +74,13 @@
                                     <li><a href="#">Deep Dropdown 4</a></li>
                                     <li><a href="#">Deep Dropdown 5</a></li>
                                 </ul>
-                            </li>
-                            <li><a href="#">Dropdown 2</a></li>
-                            <li><a href="#">Dropdown 3</a></li>
-                            <li><a href="#">Dropdown 4</a></li>
+                            </li>*@                            
+                            <li><a href="#">Enrollments</a></li>
+                            <li><a href="#">Curriculum</a></li>
+                            <li><a href="#">Class Schedule</a></li>
                         </ul>
                     </li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="@Url.ActionLink("Contact", "Home")">Contact</a></li>
                 </ul>
             </nav><!-- .navbar -->
 
@@ -113,7 +114,7 @@
             <div class="container">
                 <div class="row gy-4">
                     <div class="col-lg-5 col-md-12 footer-info">
-                        <a href="index.html" class="logo d-flex align-items-center">
+                        <a href="@Url.ActionLink("Index", "Home")" class="logo d-flex align-items-center">
                             <span>Nova</span>
                         </a>
                         <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
@@ -128,11 +129,11 @@
                     <div class="col-lg-2 col-6 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
-                            <li><i class="bi bi-dash"></i> <a href="#">Home</a></li>
-                            <li><i class="bi bi-dash"></i> <a href="#">About us</a></li>
-                            <li><i class="bi bi-dash"></i> <a href="#">Services</a></li>
-                            <li><i class="bi bi-dash"></i> <a href="#">Terms of service</a></li>
-                            <li><i class="bi bi-dash"></i> <a href="#">Privacy policy</a></li>
+                            <li><i class="bi bi-dash"></i> <a href="@Url.ActionLink("Index", "Home")">Home</a></li>
+                            <li><i class="bi bi-dash"></i> <a href="@Url.ActionLink("About", "Home")">About us</a></li>
+                            @*<li><i class="bi bi-dash"></i> <a href="@Url.ActionLink("Index", "Home")">Terms of service</a></li>
+                            <li><i class="bi bi-dash"></i> <a href="@Url.ActionLink("Index", "Home")">Privacy policy</a></li>*@
+                            <li><i class="bi bi-dash"></i> <a href="@Url.ActionLink("Contact", "Home")">Contact</a></li>
                         </ul>
                     </div>
 
