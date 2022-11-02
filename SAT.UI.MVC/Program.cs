@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using SAT.DATA.EF.Models;
 using SAT.UI.MVC.Data;
 
 namespace SAT.UI.MVC
@@ -15,6 +16,9 @@ namespace SAT.UI.MVC
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionString));
+
+            builder.Services.AddDbContext <SATContext > (options => options.UseSqlServer(connectionString));
+
 
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -58,3 +62,6 @@ namespace SAT.UI.MVC
         }
     }
 }
+
+
+
