@@ -350,4 +350,4 @@ MigrationBackup/
 .ionide/
 
 o	# Protecting Sensitive Info 
-/UI.SAT.MVC/appsettings.json
+/SAT.UI.MVC/appsettings.json
