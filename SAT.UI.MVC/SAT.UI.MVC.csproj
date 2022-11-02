@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Shared\Original_Layout.cshtml" />
     <Content Remove="wwwroot\assets\js\main.js" />
     <Content Remove="wwwroot\assets\vendor\aos\aos.js" />
     <Content Remove="wwwroot\assets\vendor\bootstrap-icons\fonts\bootstrap-icons.woff2" />
@@ -61,6 +62,7 @@
     <None Include="Views\Home\Index.cshtml" />
     <None Include="Views\Home\Privacy.cshtml" />
     <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\Original_Layout.cshtml" />
     <None Include="Views\Shared\_Layout.cshtml" />
     <None Include="Views\Shared\_LoginPartial.cshtml" />
     <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
