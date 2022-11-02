@@ -1,65 +1,71 @@
 ﻿@model IEnumerable<SAT.DATA.EF.Models.ScheduledClass>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "ScheduledClasses";
 }
 
-<h1>Index</h1>
+<div class="justify-content-center row">
+    <div class="col-md-10 offset-1">
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.StartDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EndDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.InstructorName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Location)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Course)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Scs)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EndDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.InstructorName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Location)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Course.CourseDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Scs.Scsname)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ScheduledClassId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ScheduledClassId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ScheduledClassId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+        <h1 class="mt-3">Scheduled Classes</h1>
+
+        <p>
+            <a asp-action="Create">Create New Class Schedule</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StartDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EndDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.InstructorName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Location)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Course)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Scs)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StartDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EndDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.InstructorName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Location)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Course.CourseDescription)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Scs.Scsname)
+                        </td>
+                        <td class="mt-3">
+                            <a asp-action="Edit" asp-route-id="@item.ScheduledClassId">Edit Schedule</a> |
+                            <a asp-action="Details" asp-route-id="@item.ScheduledClassId">@item.Course.CourseName Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.ScheduledClassId">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
