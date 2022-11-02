@@ -81,7 +81,7 @@ namespace SAT.UI.MVC.Controllers
             {
                 return NotFound();
             }
-            ViewData["Ssid"] = new SelectList(_context.StudentStatuses, "Ssid", "Ssname", student.Ssid);
+            ViewData["Ssid"] = new SelectList(_context.StudentStatuses, "Ss", "Ssname", student.Ssid);
             return View(student);
         }
 
