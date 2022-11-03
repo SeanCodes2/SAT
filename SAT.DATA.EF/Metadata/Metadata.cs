@@ -90,8 +90,8 @@ namespace SAT.DATA.EF.Models
             [StringLength(40, ErrorMessage ="Max 40 Characters")]
             public string InstructorName { get; set; } = null!;
 
-            [Display(Name = "Instructor Name")]
-            [Required(ErrorMessage = "Instructor Name Required")]
+            
+            [Required(ErrorMessage = "Location Required")]
             [StringLength(20, ErrorMessage = "Max 20 Characters")]
             public string Location { get; set; } = null!;
 
