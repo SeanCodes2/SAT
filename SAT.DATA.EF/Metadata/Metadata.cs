@@ -99,7 +99,7 @@ namespace SAT.DATA.EF.Models
             public int Scsid { get; set; }
         }
 
-        public class ScheduledClassStausMetadata
+        public class ScheduledClassStatusMetadata
         {
             [Display(Name ="Scheduled Class Status Id")]
             public int Scsid { get; set; }
