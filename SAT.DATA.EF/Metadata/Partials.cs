@@ -26,10 +26,9 @@ namespace SAT.DATA.EF.Models
     [ModelMetadataType(typeof(ScheduledClassMetadata))]
     public partial class ScheduledClass 
     {
-        public string CourseDesc { get { return $"{StartDate} - {Course.CourseName} - {Location}"; } }
+        public string CourseDesc { get { return $"{StartDate} - {Course?.CourseName} / {Location}"; } }
     
     }
-
 
 
 
