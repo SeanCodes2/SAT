@@ -51,7 +51,7 @@ namespace SAT.UI.MVC.Controllers
         // GET: ScheduledClasses/Create
         public IActionResult Create()
         {
-            ViewData["CourseId"] = new SelectList(_context.Courses, "CourseId", "CourseDescription");
+            ViewData["CourseId"] = new SelectList(_context.Courses.Include(e => e.ScheduledClasses), "CourseId", "CourseName");
             ViewData["Scsid"] = new SelectList(_context.ScheduledClassStatuses, "Scsid", "Scsname");
             return View();
         }

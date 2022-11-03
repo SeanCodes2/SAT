@@ -7,10 +7,10 @@
 <div class="justify-content-center row">
     <div class="col-md-10 offset-1">
 
-        <h1 class="mt-3">Details</h1>
+        <h1 class="mt-3">@Model.Ssname Details</h1>
 
         <div>
-            <h4>StudentStatus</h4>
+          
             <hr />
             <dl class="row">
                 <dt class="col-sm-2">
@@ -28,8 +28,8 @@
             </dl>
         </div>
         <div>
-            <a asp-action="Edit" asp-route-id="@Model?.Ssid">Edit</a> |
-            <a asp-action="Index">Back to List</a>
+            <a asp-action="Edit" asp-route-id="@Model?.Ssid" class="btn btn-warning">Edit</a>
+            <a asp-action="Index" class="btn btn-info">Back to List</a>
         </div>
     </div>
 </div>
