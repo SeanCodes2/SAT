@@ -1,11 +1,17 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity;
+@*@using StoreFront.DATA.EF;
+@using StoreFront.UI.MVC;*@
+@inject SignInManager<IdentityUser> signInManager
+
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Nova Bootstrap Template - Index</title>
+    <title>Greendale Community College - HomePage</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -43,10 +49,10 @@
     <header id="header" class="header d-flex align-items-center fixed-top sticked">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-            <a href="index.html" class="logo d-flex align-items-center">
+            <a href="@Url.ActionLink("Index", "Home")" class="logo d-flex align-items-center">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
                 <!-- <img src="assets/img/logo.png" alt=""> -->
-                <h1 class="d-flex align-items-center">Nova</h1>
+                <h1 class="d-flex align-items-center">Greendale College</h1>
             </a>
 
             <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
@@ -56,39 +62,40 @@
                 <ul>
                     <li><a href="@Url.ActionLink("Index", "Home")" class="active">Home</a></li>
                     <li><a href="@Url.ActionLink("About", "Home")">About</a></li>
-                    <li><a href="@Url.ActionLink("Index", "Courses")">Courses</a></li> @*Courses*@
-                    <li><a href="@Url.ActionLink("Index", "Students")">Students</a></li>
                     @*<li><a href="@Url.ActionLink("Index", "Home")">Portfolio</a></li>
                     <li><a href="@Url.ActionLink(" Index", "Home" )">Team</a></li>*@
-                    <li><a href="blog.html">Blog</a></li>
+
+                    @if (signInManager.IsSignedIn(User))
+                    {
+                       
+                    
                     <li class="dropdown">
                         <a href="#"><span>Admin</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
-                            <li><a href="#">Teachers</a></li>
-                            <li><a href="#">Enrollments</a></li>
-                            <li><a href="#">Curriculum</a></li>
-                            <li><a href="#">Class Schedule</a></li>
-                            <li><a href="@Url.ActionLink("Index", "StudentStatus")">Student Status</a></li>
-                            <li><a href="@Url.ActionLink("Index", "ScheduledClassStatus")">Scheduled Class Status</a></li>
-                            <li><a href="@Url.ActionLink("Index", "ScheduledClasses")">Scheduled Classes</a></li>
+                            @*<li><a href="#">Teachers</a></li>                            *@
+                            <li><a href="@Url.ActionLink("Index", "Courses")">Courses</a></li> @*Courses*@
                             <li><a href="@Url.ActionLink("Index", "Enrollments")">Enrollments</a></li>
-                            
+                            <li><a href="@Url.ActionLink("Index", "ScheduledClasses")">Scheduled Classes</a></li>
+                            <li><a href="@Url.ActionLink("Index", "ScheduledClassStatus")">Scheduled Class Status</a></li>
+                            <li><a href="@Url.ActionLink("Index", "Students")">Students</a></li>
+                            <li><a href="@Url.ActionLink("Index", "StudentStatus")">Student Status</a></li>
 
+                            @*<li class="dropdown">
+                            <a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                            <ul>
+                            <li><a href="#">Deep Dropdown 1</a></li>
+                            <li><a href="#">Deep Dropdown 2</a></li>
+                            <li><a href="#">Deep Dropdown 3</a></li>
+                            <li><a href="#">Deep Dropdown 4</a></li>
+                            <li><a href="#">Deep Dropdown 5</a></li>
+                            </ul>
+                            </li>*@
 
-                            <li class="dropdown">
-                                <a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                                <ul>
-                                    <li><a href="#">Deep Dropdown 1</a></li>
-                                    <li><a href="#">Deep Dropdown 2</a></li>
-                                    <li><a href="#">Deep Dropdown 3</a></li>
-                                    <li><a href="#">Deep Dropdown 4</a></li>
-                                    <li><a href="#">Deep Dropdown 5</a></li>
-                                </ul>
-                            </li>
-                            
                         </ul>
-                    </li>
+                        </li>
+                    }
                     <li><a href="@Url.ActionLink("Contact", "Home")">Contact</a></li>
+                    <li><partial name="_LoginPartial" /></li>
                 </ul>
             </nav><!-- .navbar -->
 
@@ -99,13 +106,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-4">
-                    <h2 data-aos="fade-up">Community College</h2>
+                    <h2 data-aos="fade-up">Welcome To Greendale!</h2>
                     <blockquote data-aos="fade-up" data-aos-delay="100">
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis cum recusandae eum laboriosam voluptatem repudiandae odio, vel exercitationem officiis provident minima. </p>
                     </blockquote>
                     @*<div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-                        <a href="#about" class="btn-get-started">Get Started</a>
-                        <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+                    <a href="#about" class="btn-get-started">Get Started</a>
+                    <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
                     </div>*@
 
                 </div>
