@@ -65,9 +65,17 @@ namespace SAT.UI.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(scheduledClass);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                int date = scheduledClass.StartDate.CompareTo(scheduledClass.EndDate);
+                if (date < 0)
+                {
+                    _context.Add(scheduledClass);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    ViewBag.response = "End date has to be after start date.";
+                }
             }
             ViewData["CourseId"] = new SelectList(_context.Courses, "CourseId", "CourseDescription", scheduledClass.CourseId);
             ViewData["Scsid"] = new SelectList(_context.ScheduledClassStatuses, "Scsid", "Scsname", scheduledClass.Scsid);
@@ -164,14 +172,14 @@ namespace SAT.UI.MVC.Controllers
             {
                 _context.ScheduledClasses.Remove(scheduledClass);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ScheduledClassExists(int id)
         {
-          return _context.ScheduledClasses.Any(e => e.ScheduledClassId == id);
+            return _context.ScheduledClasses.Any(e => e.ScheduledClassId == id);
         }
     }
 }
