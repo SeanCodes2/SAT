@@ -68,15 +68,16 @@
                     {
                         <li class="dropdown">
                             <a href="#"><span>Admin</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                            <ul>
-                                @*<li><a href="#">Teachers</a></li>                            *@
-                                <li><a href="@Url.ActionLink("Index", "Courses")">Courses</a></li> @*Courses*@
-                                <li><a href="@Url.ActionLink("Index", "Enrollments")">Enrollments</a></li>
+                            <ul>                                
                                 <li><a href="@Url.ActionLink("Index", "ScheduledClasses")">Scheduled Classes</a></li>
-                                <li><a href="@Url.ActionLink("Index", "ScheduledClassStatus")">Scheduled Class Status</a></li>
+                                <li><a href="@Url.ActionLink("Index", "Enrollments")">Enrollments</a></li>
                                 <li><a href="@Url.ActionLink("Index", "Students")">Students</a></li>
+                                @if (User.IsInRole("Admin"))
+                                {                                                                   
+                                <li><a href="@Url.ActionLink("Index", "ScheduledClassStatus")">Scheduled Class Status</a></li>
+                                <li><a href="@Url.ActionLink("Index", "Courses")">Courses</a></li> 
                                 <li><a href="@Url.ActionLink("Index", "StudentStatus")">Student Status</a></li>
-
+                                }
                                 @*<li class="dropdown">
                             <a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                             <ul>
@@ -104,7 +105,20 @@
                 <div class="col-xl-4">
                     <h2 data-aos="fade-up">Welcome To Greendale!</h2>
                     <blockquote data-aos="fade-up" data-aos-delay="100">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis cum recusandae eum laboriosam voluptatem repudiandae odio, vel exercitationem officiis provident minima. </p>
+                        <p>
+                            <ul>
+                                <li>Accessibility</li>
+                                <li>Affordability</li>
+                                <li>Air Conditioning</li>
+                                <li>Awesome New Friends</li>
+                                <li>A Lot of Classes</li>
+                            </ul>
+                           
+                           
+                           
+                            
+                           
+                        </p>
                     </blockquote>
                     @*<div class="d-flex" data-aos="fade-up" data-aos-delay="200">
                     <a href="#about" class="btn-get-started">Get Started</a>
@@ -127,7 +141,7 @@
                         <a href="@Url.ActionLink("Index", "Home")" class="logo d-flex align-items-center">
                             <span>Greendale</span>
                         </a>
-                        <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+                        <p>- Streets Ahead</p>
                         <div class="social-links d-flex  mt-3">
                             <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                             <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -161,11 +175,10 @@
                     <div class="col-lg-4 col-md-12 footer-contact text-center text-md-start">
                         <h4>Contact Us</h4>
                         <p>
-                            A108 Adam Street <br>
-                            New York, NY 535022<br>
+                            Greendale, Co<br>
                             United States <br><br>
                             <strong>Phone:</strong> +1 5589 55488 55<br>
-                            <strong>Email:</strong> info@example.com<br>
+                            <strong>Email:</strong> dean@comm.edu<br>
                         </p>
 
                     </div>
