@@ -10,7 +10,7 @@
         <h1 class="mt-3">Scheduled Classes</h1>
 
         <p>
-            <a asp-action="Create">Create New Class Schedule</a>
+            <a asp-action="Create" class="btn btn-info">Create New Class Schedule</a>
         </p>
         <table class="table">
             <thead>
@@ -31,7 +31,7 @@
                         @Html.DisplayNameFor(model => model.Course)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Scs)
+                        @Html.DisplayNameFor(model => model.Scs.Scsname)
                     </th>
                     <th></th>
                 </tr>

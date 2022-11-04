@@ -63,6 +63,7 @@ namespace SAT.DATA.EF.Models
             [DataType(DataType.DateTime)]
             [DisplayFormat(ApplyFormatInEditMode =true,DataFormatString ="{0:d}")]
             [Required(ErrorMessage ="Enrollment Date Required")]
+        [Display(Name ="Enrolled Date")]
             public DateTime EnrollmentDate { get; set; }
         }
 
@@ -105,6 +106,7 @@ namespace SAT.DATA.EF.Models
             public int Scsid { get; set; }
 
             [Required(ErrorMessage ="Status Name Required")]
+            [Display(Name ="Class Status")]
             [StringLength(50, ErrorMessage ="Max 50 Characters")]
             public string Scsname { get; set; } = null!;
 
